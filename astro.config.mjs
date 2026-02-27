@@ -1,7 +1,11 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
+import FontToBuffer from "unplugin-font-to-buffer/vite";
 
 export default defineConfig({
   adapter: cloudflare(),
-  output: 'server'
+  output: 'server',
+  vite: {
+    plugins: [FontToBuffer()],
+  }
 });

@@ -1,6 +1,9 @@
 ---
 export const prerender = true;
 import satori from 'satori';
+import font from "./fonts/fusion-pixel-12px-proportional-zh_hans.woff";
+
+const fontBuffer = Buffer.from(font);
 
 // This will fail during BUILD because workerd prerenderer doesn't allow WASM instantiation
 // during the prerendering phase in Astro 6
@@ -15,7 +18,14 @@ const svg = await satori(
   {
     width: 600,
     height: 400,
-    fonts: [] 
+    fonts: [
+      {
+        name: "Fusion Pixel",
+        data: fontBuffer,
+        weight: 400,
+        style: "normal",
+      },
+    ],
   }
 );
 
