@@ -1,0 +1,31 @@
+---
+export const prerender = true;
+import satori from 'satori';
+
+// This will fail during BUILD because workerd prerenderer doesn't allow WASM instantiation
+// during the prerendering phase in Astro 6
+const svg = await satori(
+  {
+    type: 'div',
+    props: {
+      children: 'hello world',
+      style: { color: 'red' }
+    }
+  },
+  {
+    width: 600,
+    height: 400,
+    fonts: [] 
+  }
+);
+
+// Native modules like sharp also fail in the workerd environment
+import sharp from 'sharp';
+try {
+  await sharp(Buffer.from(svg)).webp().toBuffer();
+} catch (e) {
+  console.error('Sharp error:', e);
+}
+---
+{svg}
+
