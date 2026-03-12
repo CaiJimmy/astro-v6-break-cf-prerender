@@ -3,9 +3,10 @@ import cloudflare from '@astrojs/cloudflare';
 import FontToBuffer from "unplugin-font-to-buffer/vite";
 
 export default defineConfig({
-  adapter: cloudflare(),
-  output: 'server',
-  vite: {
-    plugins: [FontToBuffer()],
-  }
+    adapter: cloudflare({
+        prerenderEnvironment: 'node'
+    }),
+    vite: {
+        plugins: [FontToBuffer()],
+    }
 });

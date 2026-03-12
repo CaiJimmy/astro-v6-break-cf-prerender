@@ -1,41 +1,8 @@
 ---
+import Island from "./island.astro";
+
 export const prerender = true;
-import satori from 'satori';
-import font from "./fonts/fusion-pixel-12px-proportional-zh_hans.woff";
-
-const fontBuffer = Buffer.from(font);
-
-// This will fail during BUILD because workerd prerenderer doesn't allow WASM instantiation
-// during the prerendering phase in Astro 6
-const svg = await satori(
-  {
-    type: 'div',
-    props: {
-      children: 'hello world',
-      style: { color: 'red' }
-    }
-  },
-  {
-    width: 600,
-    height: 400,
-    fonts: [
-      {
-        name: "Fusion Pixel",
-        data: fontBuffer,
-        weight: 400,
-        style: "normal",
-      },
-    ],
-  }
-);
-
-// Native modules like sharp also fail in the workerd environment
-import sharp from 'sharp';
-try {
-  await sharp(Buffer.from(svg)).webp().toBuffer();
-} catch (e) {
-  console.error('Sharp error:', e);
-}
 ---
-{svg}
+
+<Island server:defer/>
 
