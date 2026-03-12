@@ -11,7 +11,7 @@
     "dependencies": {
         "@astrojs/cloudflare": "13.1.1",
         "@oslojs/encoding": "^1.1.0",
-        "astro": "https://pkg.pr.new/astro@15891",
+        "astro": "https://pkg.pr.new/astro@fbf9d83",
         "wrangler": "^4.72.0"
     }
 }
