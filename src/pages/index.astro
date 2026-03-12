@@ -3,6 +3,10 @@ import Island from "./island.astro";
 
 export const prerender = true;
 ---
+<html>
+    <body>
+        <Island server:defer/>
+    </body>
+</html>
 
-<Island server:defer/>
 

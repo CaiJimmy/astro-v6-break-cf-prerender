@@ -4,7 +4,6 @@ import FontToBuffer from "unplugin-font-to-buffer/vite";
 
 export default defineConfig({
     adapter: cloudflare({
-        prerenderEnvironment: 'node'
     }),
     vite: {
         plugins: [FontToBuffer()],
