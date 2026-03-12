@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
-import FontToBuffer from "unplugin-font-to-buffer/vite";
 
 export default defineConfig({
     adapter: cloudflare({
@@ -8,7 +7,4 @@ export default defineConfig({
         /// However, with `node` server island request will return a 400 error
         prerenderEnvironment: 'node'
     }),
-    vite: {
-        plugins: [FontToBuffer()],
-    }
 });
