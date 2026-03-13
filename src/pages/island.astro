@@ -1,9 +1,5 @@
 ---
-import { encodeBase64 } from "@oslojs/encoding";
 import A from "./A";
- 
-const data: Uint8Array = new TextEncoder().encode("hello world");
-const encoded = encodeBase64(data);
 ---
 
-<A content={encoded} />
+<A content={'test'} />

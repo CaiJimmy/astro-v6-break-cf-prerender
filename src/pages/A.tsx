@@ -1,7 +1,7 @@
 export default function A({ content }: { content?: string }) {
     return (
         <div>
-            <p>Encoded: {content}</p>
+            <p>Content: {content}</p>
         </div>
     );
 }
