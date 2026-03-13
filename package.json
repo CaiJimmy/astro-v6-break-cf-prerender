@@ -9,9 +9,11 @@
         "astro": "astro"
     },
     "dependencies": {
-        "@astrojs/cloudflare": "13.1.1",
+        "@astrojs/cloudflare": "https://pkg.pr.new/@astrojs/cloudflare@2cb31aa",
+        "@astrojs/solid-js": "^6.0.0",
         "@oslojs/encoding": "^1.1.0",
-        "astro": "https://pkg.pr.new/astro@fbf9d83",
-        "wrangler": "^4.72.0"
+        "astro": "https://pkg.pr.new/astro@2cb31aa",
+        "solid-js": "^1.9.11",
+        "wrangler": "^4.73.0"
     }
 }
