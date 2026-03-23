@@ -1,8 +1,6 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
 
-import solidJs from '@astrojs/solid-js';
-
 export default defineConfig({
   adapter: cloudflare({
       /// When this is set to 'workerd' (default), `dev` server can render the server island correctly
@@ -10,5 +8,5 @@ export default defineConfig({
       prerenderEnvironment: 'node'
   }),
 
-  integrations: [solidJs()],
+  integrations: [],
 });
